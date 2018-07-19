@@ -5,6 +5,8 @@ Plug 'valloric/youcompleteme'
 Plug 'kien/ctrlp.vim'
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
 Plug 'tpope/vim-fugitive'
+"Plug 'dyng/ctrlsf.vim'
+Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
 let mapleader = "\<Space>"
@@ -30,5 +32,11 @@ let g:pymode_doc_bind = 'K'
 let g:pymode_rope = 1
 "let g:pymode_folding = 1
 
-map <C-n> :NERDTreeToggle<CR>
+"color schema
+syntax on
+set background=dark
+colorscheme solarized
+let g:solarized_termcolors=256
 
+"let g:solarized_termtrans=1
+map <C-n> :NERDTreeToggle<CR>
