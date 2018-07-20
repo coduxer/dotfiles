@@ -16,6 +16,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+set clipboard=unnamedplus
 "pymode settings:
 
 let g:pymode_breakpoint = 1
