@@ -14,4 +14,4 @@ udevmon=$(which udevmon) envsubst < ./udevmon.service > /etc/systemd/system/udev
 echo "Generating /etc/udevmon.yaml"
 cat ./udevmon.yaml > /etc/udevmon.yaml
 
-systemctl enable udevmon
+systemctl enable --now udevmon
