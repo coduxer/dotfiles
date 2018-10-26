@@ -5,9 +5,22 @@ Plug 'valloric/youcompleteme'
 Plug 'kien/ctrlp.vim'
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 "Plug 'dyng/ctrlsf.vim'
 Plug 'altercation/vim-colors-solarized'
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
+
+"relative line number
+:set number relativenumber
+
+"tabs
+"
+"set list
+"set listchars=tab:>-
+set expandtab
+set shiftwidth=2
+set softtabstop=2
 
 set encoding=utf-8
 let mapleader = "\<Space>"
