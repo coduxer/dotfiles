@@ -3,12 +3,16 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'valloric/youcompleteme'
 Plug 'kien/ctrlp.vim'
-Plug 'python-mode/python-mode', { 'branch': 'develop' }
+"Plug 'python-mode/python-mode', { 'branch': 'develop' }
+Plug 'python-mode/python-mode', { 'branch': 'develop', 'do': 'git fetch origin pull/950/head; git checkout FETCH_HEAD'}
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 "Plug 'dyng/ctrlsf.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-obsession'
+Plug 'mileszs/ack.vim'
+Plug 'epeli/slimux', {'do': 'git fetch origin pull/75/head; git checkout FETCH_HEAD'}
 call plug#end()
 
 "relative line number
@@ -31,6 +35,8 @@ nnoremap <C-H> <C-W><C-H>
 
 nnoremap <leader>gs :Gstatus<CR>7j
 nnoremap <leader>gp :Gpush<CR>
+nnoremap <leader>on :only<CR>
+nnoremap <leader>re :source ~/.vimrc<CR>
 set clipboard=unnamedplus
 "pymode settings:
 
@@ -56,3 +62,13 @@ let g:solarized_termcolors=256
 
 "let g:solarized_termtrans=1
 map <C-n> :NERDTreeToggle<CR>
+
+"ack vim
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+endif
+
+"slimux
+map <C-c><C-c> :SlimuxREPLSendLine<CR>
+vmap <C-c><C-c> :SlimuxREPLSendSelection<CR>
+
