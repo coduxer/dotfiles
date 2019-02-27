@@ -8,6 +8,7 @@ Plug 'python-mode/python-mode', { 'branch': 'develop', 'do': 'git fetch origin p
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 "Plug 'dyng/ctrlsf.vim'
+Plug 'romainl/flattened'
 Plug 'altercation/vim-colors-solarized'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-obsession'
@@ -55,10 +56,12 @@ let g:pymode_rope = 1
 "let g:pymode_folding = 1
 
 "color schema
-syntax on
-set background=dark
-colorscheme solarized
-let g:solarized_termcolors=256
+"syntax enable
+"set background=dark
+"let g:solarized_termcolors=16
+"colorscheme solarized
+colorscheme flattened_dark
+"let g:solarized_termcolors=256
 
 "let g:solarized_termtrans=1
 map <C-n> :NERDTreeToggle<CR>
