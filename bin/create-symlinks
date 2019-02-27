@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -eu
-
+shopt -s nullglob
 # Colors 
 BLD=$(tput bold)
 RED=$(tput setaf 1)
@@ -93,19 +93,22 @@ do_symlink() {
 
 doit() {
     local i j
-    for i in * .[^.]*; do
-
+    local dir=${1:-}/
+    [ -z "${1+x}" ] && dir=""
+    #echo dir is "$dir"
+    for i in "$dir"* "$dir".[^.]*; do
+        #echo i is "$i"
         if element_in "$i" "${cfg_ignore[@]}"; then
             continue
         fi
 
         if element_in "$i" "${cfg_first_child[@]}"; then
-            for j in "$i"/*; do
-                mkdir -p "$cfg_dest_dir/${j#$i}"
-                do_symlink "$j" "$cfg_dest_dir/$j" ../
-            done
+            #echo mkdir -p "$cfg_dest_dir/$i"
+            mkdir -p "$cfg_dest_dir/$i"
+            (doit "$i")
             continue
         fi
+        #echo do_symlink "$i" "$cfg_dest_dir/$i"
         do_symlink "$i" "$cfg_dest_dir/$i"
     done
 }

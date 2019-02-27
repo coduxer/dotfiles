@@ -13,10 +13,11 @@ cfg_ignore=("CONFIG.example" "CONFIG" "README.md" "bin" "todo"	# This repo
 	"*.orig" "*.rej"			# Patch residues
 	".*.swp" "*~" "\#*\#"			# Vim/Emacs
 	".DS_Store"				# Mac
-	"tags" "TAGS")				# CTags
+	"tags" "TAGS"
+	"LICENSE" "caps2esc")				# CTags
 
 # As explained above, link what's inside
-cfg_first_child=(".config")
+cfg_first_child=(".ipython/profile_default" ".ipython")
 
 # Destination: home directory
 cfg_dest_dir=~
