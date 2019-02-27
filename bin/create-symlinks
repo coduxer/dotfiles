@@ -93,6 +93,7 @@ do_symlink() {
 
 doit() {
     local i j
+    local rel_dst=${2:-}
     local dir=${1:-}/
     [ -z "${1+x}" ] && dir=""
     #echo dir is "$dir"
@@ -105,11 +106,11 @@ doit() {
         if element_in "$i" "${cfg_first_child[@]}"; then
             #echo mkdir -p "$cfg_dest_dir/$i"
             mkdir -p "$cfg_dest_dir/$i"
-            (doit "$i")
+            (doit "$i" "$rel_dst"../)
             continue
         fi
-        #echo do_symlink "$i" "$cfg_dest_dir/$i"
-        do_symlink "$i" "$cfg_dest_dir/$i"
+        #echo do_symlink "$i" "$cfg_dest_dir/$i" "$rel_dst"
+        do_symlink "$i" "$cfg_dest_dir/$i" "$rel_dst"
     done
 }
 
