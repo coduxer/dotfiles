@@ -28,6 +28,7 @@ call plug#end()
 set expandtab
 set shiftwidth=2
 set softtabstop=2
+set hlsearch
 
 set encoding=utf-8
 let mapleader = "\<Space>"
@@ -39,7 +40,7 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <leader>gs :Gstatus<CR>7j
 nnoremap <leader>gp :Gpush<CR>
 nnoremap <leader>on :only<CR>
-nnoremap <leader>re :source ~/.vimrc<CR>
+nnoremap <leader>so :source ~/.vimrc<CR>
 set clipboard=unnamedplus
 "pymode settings:
 
