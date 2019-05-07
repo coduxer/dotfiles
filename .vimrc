@@ -13,7 +13,9 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-obsession'
 Plug 'mileszs/ack.vim'
-Plug 'epeli/slimux', {'do': 'git fetch origin pull/75/head; git checkout FETCH_HEAD'}
+"Plug 'epeli/slimux', {'do': 'git fetch origin pull/75/head; git checkout FETCH_HEAD'}
+Plug 'coduxer/slimux'
+Plug 'coduxer/vimux'
 call plug#end()
 
 "relative line number
@@ -75,3 +77,15 @@ endif
 map <C-c><C-c> :SlimuxREPLSendLine<CR>
 vmap <C-c><C-c> :SlimuxREPLSendSelection<CR>
 
+"vimux
+function VimuxReload()
+  call VimuxRespawnRunner()
+  call VimuxSendText("sopy")
+  call VimuxSendKeys("Enter")
+endfunction
+
+ map <Leader>vp :call VimuxReload()<CR>:VimuxPromptCommand<CR>
+ map <Leader>vl :call VimuxReload()<CR>:VimuxRunLastCommand<CR>
+ map <Leader>vr :call VimuxReload()<CR>
+ map <Leader>vz :call VimuxZoomRunner()<CR>
+ map <Leader>vz :call VimuxZoomRunner()<CR>
