@@ -8,7 +8,7 @@ Plug 'python-mode/python-mode', { 'branch': 'develop', 'do': 'git fetch origin p
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 "Plug 'dyng/ctrlsf.vim'
-Plug 'romainl/flattened'
+"Plug 'romainl/flattened'
 Plug 'altercation/vim-colors-solarized'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-obsession'
@@ -16,6 +16,7 @@ Plug 'mileszs/ack.vim'
 "Plug 'epeli/slimux', {'do': 'git fetch origin pull/75/head; git checkout FETCH_HEAD'}
 Plug 'coduxer/slimux'
 Plug 'coduxer/vimux'
+Plug 'godlygeek/tabular'
 call plug#end()
 
 "relative line number
@@ -59,11 +60,12 @@ let g:pymode_rope = 1
 "let g:pymode_folding = 1
 
 "color schema
-"syntax enable
-"set background=dark
+syntax enable
+set background=dark
+let g:solarized_diffmode="low"
+colorscheme solarized
 "let g:solarized_termcolors=16
-"colorscheme solarized
-colorscheme flattened_dark
+"colorscheme flattened_dark
 "let g:solarized_termcolors=256
 
 "let g:solarized_termtrans=1
