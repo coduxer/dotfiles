@@ -10,6 +10,8 @@ Plug 'tpope/vim-surround'
 "Plug 'dyng/ctrlsf.vim'
 "Plug 'romainl/flattened'
 Plug 'altercation/vim-colors-solarized'
+Plug 'rafi/awesome-vim-colorschemes'
+Plug 'morhetz/gruvbox'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-obsession'
 Plug 'mileszs/ack.vim'
@@ -18,7 +20,8 @@ Plug 'coduxer/slimux'
 Plug 'coduxer/vimux'
 Plug 'godlygeek/tabular'
 call plug#end()
-
+" mouse
+set mouse=a
 "relative line number
 :set number relativenumber
 
@@ -37,6 +40,20 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+
+"for i in range(97,122)
+"  let c = nr2char(i)
+"  exec "map \e".c." <M-".c.">"
+"  exec "map! \e".c." <M-".c.">"
+"endfor
+
+exe "map \es <M-s>"
+exe "map! \es <M-s>"
+  
+noremap <silent> <M-s>          :update<CR>
+vnoremap <silent> <M-s>         <C-C>:update<CR>
+inoremap <silent> <M-s>         <C-O>:update<CR>
 
 nnoremap <leader>gs :Gstatus<CR>7j
 nnoremap <leader>gp :Gpush<CR>
@@ -61,9 +78,17 @@ let g:pymode_rope = 1
 
 "color schema
 syntax enable
+set termguicolors
 set background=dark
 let g:solarized_diffmode="low"
-colorscheme solarized
+colorscheme gruvbox
+"colorscheme solarized
+"colorscheme NONE
+
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
+
 "let g:solarized_termcolors=16
 "colorscheme flattened_dark
 "let g:solarized_termcolors=256
