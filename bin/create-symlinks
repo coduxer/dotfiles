@@ -102,13 +102,18 @@ doit() {
         if element_in "$i" "${cfg_ignore[@]}"; then
             continue
         fi
-
-        if element_in "$i" "${cfg_first_child[@]}"; then
-            #echo mkdir -p "$cfg_dest_dir/$i"
+        if [ -d "$i" ]; then
             mkdir -p "$cfg_dest_dir/$i"
             (doit "$i" "$rel_dst"../)
             continue
         fi
+        
+        # if element_in "$i" "${cfg_first_child[@]}"; then
+        #     #echo mkdir -p "$cfg_dest_dir/$i"
+        #     mkdir -p "$cfg_dest_dir/$i"
+        #     (doit "$i" "$rel_dst"../)
+        #     continue
+        # fi
         #echo do_symlink "$i" "$cfg_dest_dir/$i" "$rel_dst"
         do_symlink "$i" "$cfg_dest_dir/$i" "$rel_dst"
     done
