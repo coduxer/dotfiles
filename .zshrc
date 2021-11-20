@@ -1,9 +1,14 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-[[ -f ~/.bashrc ]] && . ~/.bashrc
+[[ -f ~/.bashrc_local ]] && . ~/.bashrc_local
 # Path to your oh-my-zsh installation.
-ZSH=/usr/share/oh-my-zsh/
+if [ -e "/usr/share/oh-my-zsh" ]; then
+  ZSH=/usr/share/oh-my-zsh
+else
+  ZSH="$HOME/.oh-my-zsh"
+fi
+
 ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
 
 # Set name of the theme to load --- if set to "random", it will

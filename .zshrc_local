@@ -1,16 +1,15 @@
-parufind(){paru -Sl | awk '{print $2($4=="" ? "" : " *")}' | sk --multi --preview 'paru -Si {1}' --reverse | xargs -ro paru -S}
-#parufind(){paru -Sl | awk '{print $2($4=="" ? "" : " *")}' | sk --multi --preview 'paru -Si {1}' | cut -d " " -f 1 | xargs -ro paru -S}
-#parufind () {paru -Sl | awk '{print $2($4=="" ? "" : " \*")}' | fzf -q "$1" -m --preview 'cat <(echo {1} | cut -d " " -f 1 | paru -Si -) <(echo {1} | cut -d " " -f 1 | paru -Fl - | awk "{print $2}")' | cut -d " " -f 1 | xargs -ro paru -S}
-
+if [ -f "/etc/debian_version" ]; then
+   source ~/.config/shell/debuntu
+else
+   source ~/.config/shell/archlinux
+fi
 
 
 alias s="vim ~/.zshrc_local;source ~/.zshrc_local"
 alias sprofile="vim ~/.zprofile;source ~/.zprofile"
 alias j="jump"
 alias yay=paru
-alias y=parufind
 alias pacview="pacman -Qq | sk --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
-alias pv="pacview"
 alias ls="exa -x --icons --group-directories-first"
 alias hi="echo hi"
 alias d="dolphin ."
