@@ -1,4 +1,6 @@
+parufind(){paru -Sl | awk '{print $2($4=="" ? "" : " *")}' | sk --multi --preview 'paru -Si {1}' --reverse | xargs -ro paru -S}
+alias pacview="pacman -Qq | sk --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
 alias full-update="sudo pacman -Sy && sudo trickle -s -d 2300 powerpill -Su && paru -Su"
 alias yay=paru
 alias y=parufind
-parufind(){paru -Sl | awk '{print $2($4=="" ? "" : " *")}' | sk --multi --preview 'paru -Si {1}' --reverse | xargs -ro paru -S}
+alias pv=pacview
