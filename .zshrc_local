@@ -5,6 +5,7 @@ else
 fi
 
 
+alias sx='startx -- -keeptty > ~/.xorg.log 2>&1'
 alias s="vim ~/.zshrc_local;source ~/.zshrc_local"
 alias sprofile="vim ~/.zprofile;source ~/.zprofile"
 alias j="jump"
