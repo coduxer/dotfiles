@@ -17,6 +17,7 @@ alias xclipc="xclip -selection clipboard"
 alias qemuu='sudo qemu-system-x86_64 -drive if=pflash,format=raw,readonly=on,file=/usr/share/edk2-ovmf/x64/OVMF_CODE.fd -drive if=pflash,format=raw,file=my_uefi_vars.fd'
 alias getwindowname="xprop WM_CLASS | grep -o '\"[^\"]*\"' | head -n 1"
 alias getwindowname2="xprop -notype | grep -Eo '^(WM_CLASS|_NET_WM_NAME) = \"[^\"]*\"'"
+alias ashell="cat ~/.an_bashrc - | adb shell"
 lfcd () {
     tmp="$(mktemp)"
     lf -last-dir-path="$tmp" "$@"

@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-commentary'
 Plug 'valloric/youcompleteme'
 Plug 'kien/ctrlp.vim'
 "Plug 'python-mode/python-mode', { 'branch': 'develop' }
